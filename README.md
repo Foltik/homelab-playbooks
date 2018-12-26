@@ -1,3 +1,3 @@
-# Ansible
+# homelab-playbooks
 
-Deployment scripts for my homelab
+Ansible playbooks for my homelab
