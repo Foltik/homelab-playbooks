@@ -1,0 +1,19 @@
+---
+- name: Install Packages
+  apt:
+    name: ['aptitude', 'apt-transport-https', 'wget', 'curl', 'git-core', 'sudo', 'rsync', 'zip', 'unzip', 'fail2ban', 'net-tools', 'neovim']
+    state: present
+    update_cache: yes
+
+- name: Upgrade Packages
+  apt: upgrade=safe
+
+- name: Set Timezone
+  timezone:
+    name: America/New_York
+  ignore_errors: true
+
+- name: Generate Locale
+  locale_gen:
+    name: en_US.UTF-8
+    state: present

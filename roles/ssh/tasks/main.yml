@@ -1,0 +1,22 @@
+---
+- name: Disable root login
+  lineinfile: 
+    dest: /etc/ssh/sshd_config
+    regexp: "^#?PermitRootLogin"
+    line: "PermitRootLogin prohibit-password"
+    state: present
+  notify: restart sshd
+
+- name: Disable password authentication
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^#?PasswordAuthentication"
+    line: "PasswordAuthentication no"
+    state: present
+  notify: restart sshd
+
+- name: Enable Fail2Ban
+  systemd:
+    name: fail2ban
+    state: started
+    enabled: yes
