@@ -4,6 +4,7 @@ obelisk.lan.foltz.io ansible_user=root
 
 [webservers]
 proxy.lan.foltz.io ansible_user=root
+shimapan.lan.foltz.io ansible_user=root
 
 [chatservers]
 ts.lan.foltz.io ansible_user=root
@@ -13,6 +14,7 @@ znc.lan.foltz.io ansible_user=root
 [statservers]
 influxdb.lan.foltz.io ansible_user=root
 grafana.lan.foltz.io ansible_user=root
+logstash.lan.foltz.io ansible_user=root
 
 [certs]
 proxy.lan.foltz.io ansible_user=root
