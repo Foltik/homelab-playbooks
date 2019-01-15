@@ -11,17 +11,17 @@
       vars:
         config_file: 'group_files/telegraf_virtual.conf'
 
-- hosts: container:!ts:!webservers
+- hosts: container:!ts:!proxy
   roles:
     - role: telegraf
       vars:
         config_file: 'group_files/telegraf_container.conf'
 
-- hosts: webservers
+- hosts: proxy
   roles:
     - role: telegraf
       vars:
-        config_file: 'group_files/telegraf_webserver.conf'
+        config_file: 'group_files/telegraf_proxy.conf'
 
 - hosts: ts
   roles:
