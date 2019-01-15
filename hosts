@@ -13,9 +13,8 @@ grafana
 csgo-prac
 csgo-kz
 
-[webservers]
+[nginx]
 proxy
-shimapan
 
 [certs]
 proxy

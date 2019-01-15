@@ -1,0 +1,10 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+
+- name: Add HTTPS Rewrite
+  copy:
+    src: group_files/nginx_tls.conf
+    dest: /etc/nginx/conf.d/tls.conf
+  notify: Restart Nginx
