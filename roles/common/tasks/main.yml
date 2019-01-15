@@ -1,7 +1,7 @@
 ---
 - name: Install Packages
   apt:
-    name: ['aptitude', 'apt-transport-https', 'wget', 'curl', 'git-core', 'sudo', 'rsync', 'zip', 'unzip', 'fail2ban', 'net-tools', 'neovim']
+    name: ['aptitude', 'apt-transport-https', 'lm-sensors', 'iperf', 'wget', 'curl', 'git-core', 'sudo', 'rsync', 'zip', 'unzip', 'fail2ban', 'net-tools', 'neovim']
     state: present
     update_cache: yes
 
@@ -17,3 +17,16 @@
   locale_gen:
     name: en_US.UTF-8
     state: present
+
+- name: Create 'wheel' Group
+  group:
+    name: wheel
+    state: present
+
+- name: Grant 'wheel' Sudo Privileges
+  lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^%wheel'
+      line: '%wheel ALL=(ALL) NOPASSWD:ALL'
+      validate: 'visudo -cf %s'
