@@ -1,24 +1,27 @@
-[nodes]
-monolith.lan.foltz.io ansible_user=root
-obelisk.lan.foltz.io ansible_user=root
+[physical]
+monolith
+obelisk
+
+[container]
+proxy
+shimapan
+ts
+irc
+znc
+influxdb
+grafana
+csgo-prac
+csgo-kz
 
 [webservers]
-proxy.lan.foltz.io ansible_user=root
-shimapan.lan.foltz.io ansible_user=root
-
-[chatservers]
-ts.lan.foltz.io ansible_user=root
-irc.lan.foltz.io ansible_user=root
-znc.lan.foltz.io ansible_user=root
-
-[statservers]
-influxdb.lan.foltz.io ansible_user=root
-grafana.lan.foltz.io ansible_user=root
-logstash.lan.foltz.io ansible_user=root
-elasticsearch.lan.foltz.io ansible_user=root
-kibana.lan.foltz.io ansible_user=root
+proxy
+shimapan
 
 [certs]
-proxy.lan.foltz.io ansible_user=root
-irc.lan.foltz.io ansible_user=root
-znc.lan.foltz.io ansible_user=root
+proxy
+irc
+znc
+
+[steamcmd]
+csgo-prac
+csgo-kz
