@@ -1,0 +1,24 @@
+---
+- name: Add InfluxData GPG Key
+  apt_key:
+    url: https://repos.influxdata.com/influxdb.key
+
+- name: Add InfluxData Repo
+  apt_repository:
+    repo: deb https://repos.influxdata.com/debian stretch stable
+
+- name: Install Telegraf
+  apt:
+    name: 'telegraf'
+
+- name: Give Telegraf Sudo Privileges
+  user:
+    name: 'telegraf'
+    groups: ['wheel']
+    append: yes
+
+- name: Install Configuration
+  copy: 
+    src: "{{ config_file }}"
+    dest: /etc/telegraf/telegraf.conf
+  notify: Restart Telegraf

@@ -1,0 +1,30 @@
+---
+- hosts: physical
+  roles:
+    - role: telegraf
+      vars:
+        config_file: 'group_files/telegraf_physical.conf'
+  
+- hosts: virtual
+  roles:
+    - role: telegraf
+      vars:
+        config_file: 'group_files/telegraf_virtual.conf'
+
+- hosts: container:!ts:!webservers
+  roles:
+    - role: telegraf
+      vars:
+        config_file: 'group_files/telegraf_container.conf'
+
+- hosts: webservers
+  roles:
+    - role: telegraf
+      vars:
+        config_file: 'group_files/telegraf_webserver.conf'
+
+- hosts: ts
+  roles:
+    - role: telegraf
+      vars:
+        config_file: 'host_files/telegraf_ts.conf'
