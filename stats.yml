@@ -21,7 +21,7 @@
   roles:
     - role: telegraf
       vars:
-        config_file: 'group_files/telegraf_proxy.conf'
+        config_file: 'host_files/telegraf_proxy.conf'
 
 - hosts: ts
   roles:
