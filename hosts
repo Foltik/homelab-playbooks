@@ -8,10 +8,12 @@ shimapan
 ts
 irc
 znc
+nas
 influxdb
 grafana
 csgo-prac
 csgo-kz
+terraria
 
 [nginx]
 proxy
