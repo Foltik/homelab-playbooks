@@ -1,7 +1,7 @@
 ---
 - name: Install Packages
   apt:
-    name: ['aptitude', 'apt-transport-https', 'lm-sensors', 'iperf', 'wget', 'curl', 'git-core', 'sudo', 'rsync', 'zip', 'unzip', 'fail2ban', 'net-tools', 'neovim']
+    name: ['aptitude', 'apt-transport-https', 'borgbackup', 'iperf', 'wget', 'curl', 'git-core', 'sudo', 'rsync', 'zip', 'unzip', 'fail2ban', 'net-tools', 'dnsutils', 'tmux', 'neovim']
     state: present
     update_cache: yes
 
