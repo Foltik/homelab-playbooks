@@ -20,3 +20,9 @@
     name: fail2ban
     state: started
     enabled: yes
+
+- name: Add Public Key
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ lookup('file', 'group_files/0x4DC05CBED18418B5-public-ssh.rsa') }}"
