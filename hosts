@@ -5,10 +5,13 @@ obelisk
 [container]
 proxy
 shimapan
+foltz
 ts
 irc
 znc
 nas
+calibre
+nextcloud
 influxdb
 grafana
 csgo-prac
