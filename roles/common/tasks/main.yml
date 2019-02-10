@@ -18,6 +18,9 @@
     name: en_US.UTF-8
     state: present
 
+- name: Set Default Locale
+  command: update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+
 - name: Create 'wheel' Group
   group:
     name: wheel
