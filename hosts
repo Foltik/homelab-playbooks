@@ -6,6 +6,7 @@ obelisk
 proxy
 shimapan
 foltz
+dash
 influxdb
 grafana
 ts
@@ -17,13 +18,15 @@ nextcloud
 transmission
 nzbget
 firefly
+huginn
 lidarr
 beets
 jackett
 musicbrainz
 csgo-prac
 csgo-kz
-terraria
+factorio
+morrowind
 
 [nginx]
 proxy
